@@ -38,8 +38,8 @@ prep() {
 	create_dir "$LOG_DIR"
 	header
 	goto_base_dir
-	parse_ini $INI_FILE
-	get_args $@
+	#parse_ini $INI_FILE
+	#get_args $@
 }
 
 import() {
