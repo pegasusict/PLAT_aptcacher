@@ -35,10 +35,10 @@ init() {
 prep() {
 	import "BASH_FUNC_LIB/default.inc.bash"
 	create_dir "$LOG_DIR"
-	header
-	goto_base_dir
-	parse_ini $INI_FILE
-	get_args $@
+#	header
+#	goto_base_dir
+#	parse_ini $INI_FILE
+#	get_args $@
 	declare -gr AC_CFG="/etc/apt-cacher-ng/acng.conf"
 }
 
@@ -48,8 +48,9 @@ import() {
 	then
 		source "$_FILE"
 	else
-		crit_line "File $_FILE not found!"
-		exit 1
+		exit 1  "File $_FILE not found!"
+#		crit_line "File $_FILE not found!"
+#		exit 1
 	fi
 }
 
@@ -57,7 +58,6 @@ main() {
 	### install apt-cacher
 	apt_inst apt-cacher-ng
 	edit_line_in_file "CacheDir: /var/cache/apt-cacher-ng" "CacheDir: /var/cache/apt-cacher-ng" "$AC_CFG"
-
 }
 
 ##### BOILERPLATE #####

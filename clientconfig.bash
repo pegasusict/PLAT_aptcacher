@@ -33,13 +33,13 @@ init() {
 }
 
 prep() {
-	declare -g CACHE_SERVER="192.168.49.210"
-	import "BASH_FUNC_LIB/default.inc.bash"
-	create_dir "$LOG_DIR"
-	header
-	goto_base_dir
-	#parse_ini $INI_FILE
-	#get_args $@
+	declare -gr CACHE_SERVER="192.168.49.210"
+#	import "BASH_FUNC_LIB/default.inc.bash"
+#	create_dir "$LOG_DIR"
+#	header
+#	goto_base_dir
+#	parse_ini $INI_FILE
+#	get_args
 }
 
 import() {
@@ -48,8 +48,9 @@ import() {
 	then
 		source "$_FILE"
 	else
-		crit_line "File $_FILE not found!"
-		exit 1
+#		crit_line "File $_FILE not found!"
+		exit 1 "File $_FILE not found!"
+#		exit 1
 	fi
 }
 
