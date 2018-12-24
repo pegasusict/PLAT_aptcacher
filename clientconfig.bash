@@ -21,10 +21,10 @@ init() {
 	declare -gr MAINTAINER_EMAIL="pegasus.ict@gmail.com"
 	declare -gr COPYRIGHT="(c)2017-$(date +"%Y")"
 	declare -gr VER_MAJOR=0
-	declare -gr VER_MINOR=0
-	declare -gr VER_PATCH=5
-	declare -gr VER_STATE="PRE-ALPHA"
-	declare -gr BUILD=20180710
+	declare -gr VER_MINOR=1
+	declare -gr VER_PATCH=0
+	declare -gr VER_STATE="BETA"
+	declare -gr BUILD=20181224
 	declare -gr LICENSE="MIT"
 	############################################################################
 	declare -gr PROGRAM="$PROGRAM_SUITE - $SCRIPT_TITLE"
@@ -33,7 +33,7 @@ init() {
 }
 
 prep() {
-	declare -gr CACHE_SERVER="192.168.49.210"
+	declare -gr CACHE_SERVER="192.168.2.200"
 #	import "BASH_FUNC_LIB/default.inc.bash"
 #	create_dir "$LOG_DIR"
 #	header
@@ -63,8 +63,6 @@ insert_proxy() {
 
 main() {
 	insert_proxy
-
-
 }
 ######### BOILERPLATE ##############
 
